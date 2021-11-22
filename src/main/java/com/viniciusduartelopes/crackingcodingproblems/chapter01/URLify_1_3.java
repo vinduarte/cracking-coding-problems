@@ -21,9 +21,19 @@ public class URLify_1_3 {
         }
     }
 
+    private static int findRealSizeOfString(String str) {
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if (str.charAt(i) != ' ') {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
-        char c[] = "Mr John Smith    ".toCharArray();
-        urlify(c, 13);
+        String test1 = "Mr John Smith    ";
+        char[] c = test1.toCharArray();
+        urlify(c, findRealSizeOfString(test1));
         System.out.println("test 1 = " + Arrays.toString(c));
     }
 }
