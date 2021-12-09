@@ -1,4 +1,4 @@
-package com.viniciusduartelopes.crackingcodingproblems.chapter01;
+package book.chapter01;
 
 public class PalindromePermutation_1_4_v1 {
 

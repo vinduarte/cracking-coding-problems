@@ -1,4 +1,4 @@
-package com.viniciusduartelopes.crackingcodingproblems.hackerrank;
+package hackerrank;
 
 import java.io.*;
 import java.util.*;
