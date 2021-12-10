@@ -6,7 +6,6 @@ import java.util.Set;
 public class AMZ002_TwoSumJustTrueOrFalse {
 
     private static boolean findSumOfTwo(int[] numbers, int target) {
-
         Set<Integer> hs = new HashSet<>();
         Integer diff;
 
