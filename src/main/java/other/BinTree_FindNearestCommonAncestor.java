@@ -5,6 +5,18 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class BinTree_FindNearestCommonAncestor {
 
+    public Node findNearestCommonAncestorMuchBetter(Node root, Node a, Node b) {
+        if (a.value < root.value && b.value > root.value) {
+            return root;
+        }
+        
+        if (a.value < root.value) {
+            return findNearestCommonAncestorMuchBetter(root.left, a, b);
+        }
+
+        return findNearestCommonAncestorMuchBetter(root.right, a, b);
+    }
+
     public static Node findNearestCommonAncestor(Node root, Node a, Node b) {
         Queue<Node> qA = binSearch(root, a);
         if (qA == null)
