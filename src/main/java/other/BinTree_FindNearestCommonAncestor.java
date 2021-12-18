@@ -97,6 +97,12 @@ public class BinTree_FindNearestCommonAncestor {
         x = findNearestCommonAncestor(n8, n14, n13);
         System.out.println("14 and 13 = " + x.value);
 
+        x = findNearestCommonAncestor(n8, n6, n7);
+        System.out.println("6 and 7 = " + x.value);
+
+        x = findNearestCommonAncestor(n8, n6, n4);
+        System.out.println("6 and 4 = " + x.value);
+
         x = findNearestCommonAncestorMuchBetter(n8, n1, n6);
         System.out.println("1 and 6 = " + x.value);
 
@@ -105,5 +111,11 @@ public class BinTree_FindNearestCommonAncestor {
 
         x = findNearestCommonAncestorMuchBetter(n8, n14, n13);
         System.out.println("14 and 13 = " + x.value);
+
+        x = findNearestCommonAncestorMuchBetter(n8, n6, n7);
+        System.out.println("6 and 7 = " + x.value);
+
+        x = findNearestCommonAncestorMuchBetter(n8, n6, n4);
+        System.out.println("6 and 4 = " + x.value);
     }
 }
