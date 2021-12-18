@@ -3,18 +3,28 @@ package other;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import javax.sound.sampled.SourceDataLine;
+
 public class BinTree_FindNearestCommonAncestor {
 
     public static Node findNearestCommonAncestorMuchBetter(Node root, Node a, Node b) {
-        if (a.value < root.value && b.value > root.value) {
+        return _findNearestCommonAncestorMuchBetter(root, a, b, null);
+    }
+
+    public static Node _findNearestCommonAncestorMuchBetter(Node root, Node a, Node b, Node ancestor) {
+        if (root == null)
+            return ancestor;
+
+        if (a.value < root.value && b.value > root.value)
             return root;
-        }
 
-        if (a.value < root.value) {
-            return findNearestCommonAncestorMuchBetter(root.left, a, b);
-        }
+        if (root.value != a.value && root.value != b.value)
+            ancestor = root;
 
-        return findNearestCommonAncestorMuchBetter(root.right, a, b);
+        if (a.value < root.value)
+            return _findNearestCommonAncestorMuchBetter(root.left, a, b, ancestor);
+
+        return _findNearestCommonAncestorMuchBetter(root.right, a, b, ancestor);
     }
 
     public static Node findNearestCommonAncestor(Node root, Node a, Node b) {
@@ -84,10 +94,16 @@ public class BinTree_FindNearestCommonAncestor {
         x = findNearestCommonAncestor(n8, n3, n13);
         System.out.println("3 and 13 = " + x.value);
 
+        x = findNearestCommonAncestor(n8, n14, n13);
+        System.out.println("14 and 13 = " + x.value);
+
         x = findNearestCommonAncestorMuchBetter(n8, n1, n6);
         System.out.println("1 and 6 = " + x.value);
 
         x = findNearestCommonAncestorMuchBetter(n8, n3, n13);
         System.out.println("3 and 13 = " + x.value);
+
+        x = findNearestCommonAncestorMuchBetter(n8, n14, n13);
+        System.out.println("14 and 13 = " + x.value);
     }
 }
