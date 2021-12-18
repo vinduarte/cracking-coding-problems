@@ -3,8 +3,6 @@ package other;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import javax.sound.sampled.SourceDataLine;
-
 public class BinTree_FindNearestCommonAncestor {
 
     public static Node findNearestCommonAncestorMuchBetter(Node root, Node a, Node b) {
@@ -20,6 +18,8 @@ public class BinTree_FindNearestCommonAncestor {
 
         if (root.value != a.value && root.value != b.value)
             ancestor = root;
+        else
+            return ancestor;
 
         if (a.value < root.value)
             return _findNearestCommonAncestorMuchBetter(root.left, a, b, ancestor);
@@ -103,6 +103,9 @@ public class BinTree_FindNearestCommonAncestor {
         x = findNearestCommonAncestor(n8, n6, n4);
         System.out.println("6 and 4 = " + x.value);
 
+        x = findNearestCommonAncestor(n8, n3, n7);
+        System.out.println("3 and 7 = " + x.value);
+
         x = findNearestCommonAncestorMuchBetter(n8, n1, n6);
         System.out.println("1 and 6 = " + x.value);
 
@@ -117,5 +120,8 @@ public class BinTree_FindNearestCommonAncestor {
 
         x = findNearestCommonAncestorMuchBetter(n8, n6, n4);
         System.out.println("6 and 4 = " + x.value);
+
+        x = findNearestCommonAncestorMuchBetter(n8, n3, n7);
+        System.out.println("3 and 7 = " + x.value);
     }
 }
